@@ -1,5 +1,9 @@
 package com;
 
+import java.util.List;
+
+import javax.persistence.TypedQuery;
+
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
@@ -32,7 +36,17 @@ public class OneToOneDemonstrate {
 		session = sessionFactory.openSession();
 		transaction = session.beginTransaction();
 
-		session.persist(new OneToOneDemonstrate().GenerateUser());
+//		session.persist(new OneToOneDemonstrate().GenerateUser());
+		
+		TypedQuery<CustomerBean> query = session.createQuery("FROM CustomerBean c", CustomerBean.class);
+		List<CustomerBean> customerList = query.getResultList();
+
+		for (CustomerBean c : customerList) {
+			System.out.println("Customer => " + c.getCustomerId() + " | " + c.getCustomerName());
+			AddressBean a = c.getAddress();
+			System.out.println("Address => " + a.getAddressId() + " | " + a.getStreetName() + " | " + a.getCity() + " | " + a.getState());
+		}
+		
 		
 		transaction.commit();
 		session.close();
