@@ -1,4 +1,4 @@
-package com;
+package com.driver;
 
 import java.util.List;
 
@@ -47,8 +47,8 @@ public class OneToOneDemonstrate {
 			System.out.println("Address => " + a.getAddressId() + " | " + a.getStreetName() + " | " + a.getCity() + " | " + a.getState());
 		}
 		
-		
 		transaction.commit();
 		session.close();
+		sessionFactory.close();
 	}
 }

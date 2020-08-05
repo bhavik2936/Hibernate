@@ -1,4 +1,4 @@
-package com;
+package com.driver;
 
 import java.util.List;
 import java.util.Scanner;
