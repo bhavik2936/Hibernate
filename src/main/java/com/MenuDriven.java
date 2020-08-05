@@ -8,7 +8,7 @@ import org.hibernate.Transaction;
 import org.hibernate.cfg.Configuration;
 import com.bean.UserBean;
 
-public class App {
+public class MenuDriven {
 
 	public static void printUser(UserBean userBean) {
 		System.out.println("User ID: " + userBean.getUserId());
