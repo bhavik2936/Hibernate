@@ -3,6 +3,7 @@ package com.bean;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
@@ -12,6 +13,7 @@ import javax.persistence.Table;
 public class CustomerBean {
 
 	@Id
+	@GeneratedValue
 	private int CustomerId;
 	@Column(nullable = false)
 	private String customerName;
