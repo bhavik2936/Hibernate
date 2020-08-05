@@ -18,35 +18,35 @@ public class AddressBean {
 	@Column(nullable = false)
 	private String state;
 
-	public final int getAddressId() {
+	public int getAddressId() {
 		return addressId;
 	}
 
-	public final void setAddressId(int addressId) {
+	public void setAddressId(int addressId) {
 		this.addressId = addressId;
 	}
 
-	public final String getStreetName() {
+	public String getStreetName() {
 		return streetName;
 	}
 
-	public final void setStreetName(String streetName) {
+	public void setStreetName(String streetName) {
 		this.streetName = streetName;
 	}
 
-	public final String getCity() {
+	public String getCity() {
 		return city;
 	}
 
-	public final void setCity(String city) {
+	public void setCity(String city) {
 		this.city = city;
 	}
 
-	public final String getState() {
+	public String getState() {
 		return state;
 	}
 
-	public final void setState(String state) {
+	public void setState(String state) {
 		this.state = state;
 	}
 }

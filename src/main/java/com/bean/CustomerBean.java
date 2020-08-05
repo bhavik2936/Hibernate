@@ -18,27 +18,27 @@ public class CustomerBean {
 	@OneToOne(cascade = CascadeType.ALL)
 	private AddressBean address;
 
-	public final AddressBean getAddress() {
+	public AddressBean getAddress() {
 		return address;
 	}
 
-	public final void setAddress(AddressBean address) {
+	public void setAddress(AddressBean address) {
 		this.address = address;
 	}
 
-	public final int getCustomerId() {
+	public int getCustomerId() {
 		return CustomerId;
 	}
 
-	public final void setCustomerId(int customerId) {
+	public void setCustomerId(int customerId) {
 		CustomerId = customerId;
 	}
 
-	public final String getCustomerName() {
+	public String getCustomerName() {
 		return customerName;
 	}
 
-	public final void setCustomerName(String customerName) {
+	public void setCustomerName(String customerName) {
 		this.customerName = customerName;
 	}
 }
