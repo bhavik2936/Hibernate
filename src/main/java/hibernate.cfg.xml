@@ -33,6 +33,8 @@
       <mapping resource = "User.hbm.xml"/>
       <mapping class="com.bean.CustomerBean"/>
       <mapping class="com.bean.AddressBean"/>
+      <mapping resource="Faculty.hbm.xml"/>
+      <mapping resource="Course.hbm.xml"/>
       
    </session-factory>
 </hibernate-configuration>

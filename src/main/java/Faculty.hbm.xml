@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+"-//Hibernate/Hibernate Mapping DTD//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping>
+	<class name="com.bean.FacultyBean" table="hb_faculty">
+		<id name="facultyId" type="int">
+			<generator class="native"></generator>
+		</id>
+		<property name="facultyName"></property>
+		<set name="courses" cascade="all">
+			<key column="facultyId" not-null="true"></key>
+			<one-to-many class="com.bean.CourseBean" />
+		</set>
+	</class>
+</hibernate-mapping>
