@@ -9,17 +9,17 @@ import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 import org.hibernate.cfg.Configuration;
 
-import com.bean.AddressBean;
-import com.bean.CustomerBean;
+import com.entity.Address;
+import com.entity.Customer;
 
 public class OneToOneDemonstrate {
 
 	// returns single user
-	CustomerBean GenerateUser() {
-		CustomerBean customer = new CustomerBean();
+	Customer GenerateUser() {
+		Customer customer = new Customer();
 		customer.setCustomerName("John Doe");
 		
-		AddressBean address = new AddressBean();
+		Address address = new Address();
 		address.setStreetName("11, Park Avenue");
 		address.setCity("New York City");
 		address.setState("New York");
@@ -38,12 +38,12 @@ public class OneToOneDemonstrate {
 
 //		session.persist(new OneToOneDemonstrate().GenerateUser());
 		
-		TypedQuery<CustomerBean> query = session.createQuery("FROM CustomerBean c", CustomerBean.class);
-		List<CustomerBean> customerList = query.getResultList();
+		TypedQuery<Customer> query = session.createQuery("FROM CustomerBean c", Customer.class);
+		List<Customer> customerList = query.getResultList();
 
-		for (CustomerBean c : customerList) {
+		for (Customer c : customerList) {
 			System.out.println("Customer => " + c.getCustomerId() + " | " + c.getCustomerName());
-			AddressBean a = c.getAddress();
+			Address a = c.getAddress();
 			System.out.println("Address => " + a.getAddressId() + " | " + a.getStreetName() + " | " + a.getCity() + " | " + a.getState());
 		}
 		

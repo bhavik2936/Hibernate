@@ -1,4 +1,4 @@
-package com.bean;
+package com.entity;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
@@ -10,7 +10,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "hb_customer")
-public class CustomerBean {
+public class Customer {
 
 	@Id
 	@GeneratedValue
@@ -18,13 +18,13 @@ public class CustomerBean {
 	@Column(nullable = false)
 	private String customerName;
 	@OneToOne(cascade = CascadeType.ALL)
-	private AddressBean address;
+	private Address address;
 
-	public AddressBean getAddress() {
+	public Address getAddress() {
 		return address;
 	}
 
-	public void setAddress(AddressBean address) {
+	public void setAddress(Address address) {
 		this.address = address;
 	}
 

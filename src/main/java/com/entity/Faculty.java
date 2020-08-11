@@ -1,12 +1,12 @@
-package com.bean;
+package com.entity;
 
 import java.util.Set;
 
-public class FacultyBean {
+public class Faculty {
 
 	private int facultyId;
 	private String facultyName;
-	private Set<CourseBean> courses;
+	private Set<Course> courses;
 
 	public int getFacultyId() {
 		return facultyId;
@@ -24,11 +24,11 @@ public class FacultyBean {
 		this.facultyName = facultyName;
 	}
 
-	public Set<CourseBean> getCourses() {
+	public Set<Course> getCourses() {
 		return courses;
 	}
 
-	public void setCourses(Set<CourseBean> courses) {
+	public void setCourses(Set<Course> courses) {
 		this.courses = courses;
 	}
 }

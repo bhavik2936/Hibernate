@@ -6,11 +6,12 @@ import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 import org.hibernate.cfg.Configuration;
-import com.bean.UserBean;
+
+import com.entity.User;
 
 public class MenuDriven {
 
-	public static void printUser(UserBean userBean) {
+	public static void printUser(User userBean) {
 		System.out.println("User ID: " + userBean.getUserId());
 		System.out.println("Name: " + userBean.getName());
 		System.out.println("Email: " + userBean.getEmail());
@@ -37,7 +38,7 @@ public class MenuDriven {
 			switch (choice) {
 			case 1:
 				session = sessionFactory.openSession();
-				UserBean user = new UserBean();
+				User user = new User();
 
 				System.out.println("Enter Name");
 				temp = sc.next();
@@ -61,7 +62,7 @@ public class MenuDriven {
 
 				System.out.println("Enter User ID");
 				Integer userUpdateId = sc.nextInt();
-				UserBean userUpdate = session.createQuery("FROM UserBean WHERE userId = :userId", UserBean.class)
+				User userUpdate = session.createQuery("FROM UserBean WHERE userId = :userId", User.class)
 						.setParameter("userId", userUpdateId).getSingleResult();
 				printUser(userUpdate);
 
@@ -93,16 +94,16 @@ public class MenuDriven {
 
 				System.out.println("Enter User ID");
 				Integer userSelectId = sc.nextInt();
-				UserBean userSelect = session.createQuery("FROM UserBean WHERE userId = :userId", UserBean.class)
+				User userSelect = session.createQuery("FROM UserBean WHERE userId = :userId", User.class)
 						.setParameter("userId", userSelectId).getSingleResult();
 				printUser(userSelect);
 
 				break;
 			case 4:
 				session = sessionFactory.openSession();
-				List<UserBean> users = session.createQuery("FROM UserBean", UserBean.class).getResultList();
+				List<User> users = session.createQuery("FROM UserBean", User.class).getResultList();
 
-				for (UserBean userLoop : users) {
+				for (User userLoop : users) {
 					printUser(userLoop);
 				}
 
@@ -113,7 +114,7 @@ public class MenuDriven {
 
 				System.out.println("Enter User ID");
 				Integer userDeleteId = sc.nextInt();
-				UserBean userDelete = new UserBean();
+				User userDelete = new User();
 				userDelete.setUserId(userDeleteId);
 //				System.out.println(session.createQuery("FROM UserBean WHERE userId = :userId").setParameter("userId", userDeleteId).getSingleResult().getClass());
 

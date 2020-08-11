@@ -1,6 +1,6 @@
-package com.bean;
+package com.entity;
 
-public class CourseBean {
+public class Course {
 
 	private int courseId;
 	private String courseName;

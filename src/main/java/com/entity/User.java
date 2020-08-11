@@ -1,6 +1,6 @@
-package com.bean;
+package com.entity;
 
-public class UserBean {
+public class User {
 	private int userId;
 	private String name;
 	private String email;

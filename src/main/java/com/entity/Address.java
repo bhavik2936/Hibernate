@@ -1,4 +1,4 @@
-package com.bean;
+package com.entity;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -8,7 +8,7 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "hb_address")
-public class AddressBean {
+public class Address {
 
 	@Id
 	@GeneratedValue

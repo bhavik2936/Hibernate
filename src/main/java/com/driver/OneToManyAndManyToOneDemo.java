@@ -8,8 +8,8 @@ import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 import org.hibernate.cfg.Configuration;
 
-import com.bean.CourseBean;
-import com.bean.FacultyBean;
+import com.entity.Course;
+import com.entity.Faculty;
 
 public class OneToManyAndManyToOneDemo {
 
@@ -18,15 +18,15 @@ public class OneToManyAndManyToOneDemo {
 		Session session = null;
 		Transaction transaction = null;
 		
-		FacultyBean faculty = new FacultyBean();
+		Faculty faculty = new Faculty();
 		faculty.setFacultyName("John Doe");
 		
-		Set<CourseBean> courses = new HashSet<CourseBean>();
-		CourseBean course1 = new CourseBean();
+		Set<Course> courses = new HashSet<Course>();
+		Course course1 = new Course();
 		course1.setCourseName("Java");
-		CourseBean course2 = new CourseBean();
+		Course course2 = new Course();
 		course2.setCourseName("Android");
-		CourseBean course3 = new CourseBean();
+		Course course3 = new Course();
 		course3.setCourseName("Hibernate");
 		
 		courses.add(course1);
