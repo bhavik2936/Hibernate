@@ -35,6 +35,8 @@
       <mapping class="com.entity.Address"/>
       <mapping resource="Faculty.hbm.xml"/>
       <mapping resource="Course.hbm.xml"/>
+      <mapping class="com.entity.Person"/>
+      <mapping class="com.entity.Hobby"/>
       
    </session-factory>
 </hibernate-configuration>
