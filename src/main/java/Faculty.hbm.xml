@@ -4,14 +4,14 @@
 "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 
 <hibernate-mapping>
-	<class name="com.bean.FacultyBean" table="hb_faculty">
+	<class name="com.entity.Faculty" table="hb_faculty">
 		<id name="facultyId" type="int">
 			<generator class="native"></generator>
 		</id>
 		<property name="facultyName"></property>
 		<set name="courses" cascade="all">
 			<key column="facultyId" not-null="true"></key>
-			<one-to-many class="com.bean.CourseBean" />
+			<one-to-many class="com.entity.Course" />
 		</set>
 	</class>
 </hibernate-mapping>
